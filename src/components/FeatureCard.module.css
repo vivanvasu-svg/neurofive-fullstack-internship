@@ -1,0 +1,67 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 40px 28px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(111, 78, 55, 0.1), 0 0 20px rgba(232, 154, 61, 0.05);
+}
+
+.iconWrap {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background-color: #f3ede4;
+  color: var(--color-primary);
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .iconWrap {
+  transform: scale(1.1) rotate(8deg);
+}
+
+.title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}

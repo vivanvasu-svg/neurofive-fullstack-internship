@@ -1,6 +1,6 @@
 # NeuroFive Solutions – Full Stack Developer Internship
 
-This repository contains my submissions for the **Full Stack Developer Internship** assessment at **NeuroFive Solutions**. The project, **Brew Haven**, was developed progressively as each task was completed, evolving from a responsive frontend into a full-stack application.
+This repository contains my submissions for the **Full Stack Developer Internship** assessment at **NeuroFive Solutions**. The project, **Brew Haven**, was developed step by step as each internship task was completed, evolving from a responsive landing page into a full-stack web application.
 
 ## Completed Tasks
 
@@ -24,21 +24,31 @@ Features include:
 - Loading and error states
 - Responsive card layout
 
-### ✅ Task 3 – Full Stack CRUD Application
+### ✅ Task 3 – Full Stack CRUD
 
-Built a custom backend and connected it to the React frontend.
+Built a custom backend API and connected it to the React frontend.
 
 Features include:
 
-- Custom REST API
+- REST API with Express.js
 - Create, Read, Update, and Delete (CRUD) operations
-- React frontend connected to the backend
-- Loading and error handling for all requests
-- State management using React Hooks
+- MongoDB database integration
+- Loading and error handling
+- React state management with Hooks
 
-### ✅ Task 4 – Full Stack Enhancements
+### ✅ Task 4 – Authentication & Protected Routes
 
-Improved the application by refining the CRUD workflow, enhancing the user experience, and organizing the project into a more complete full-stack application.
+Added a complete authentication system.
+
+Features include:
+
+- User registration and login
+- Password hashing with bcrypt
+- JWT-based authentication
+- Protected routes
+- Secure token storage
+- Logout functionality
+- Client-side form validation
 
 ---
 
@@ -57,12 +67,15 @@ Improved the application by refining the CRUD workflow, enhancing the user exper
 
 - Node.js
 - Express.js
-- MongoDB (Mongoose)
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcrypt
 
-### API
+### APIs
 
-- TheCocktailDB (Task 2)
-- Custom Express REST API (Task 3 & Task 4)
+- TheCocktailDB API (Task 2)
+- Custom Express REST API (Tasks 3 & 4)
 
 ---
 
@@ -74,13 +87,13 @@ Improved the application by refining the CRUD workflow, enhancing the user exper
 npm install
 ```
 
-### Start the frontend
+### Run the frontend
 
 ```bash
 npm run dev
 ```
 
-### Start the backend
+### Run the backend
 
 ```bash
 npm run server
@@ -94,4 +107,4 @@ npm run build
 
 ---
 
-This project was developed as part of the **NeuroFive Solutions Full Stack Developer Internship** assessment to demonstrate responsive frontend development, API integration, backend development, CRUD operations, and full-stack application architecture.
+This project was created as part of the **NeuroFive Solutions Full Stack Developer Internship** assessment to demonstrate frontend development, API integration, backend development, authentication, CRUD operations, and full-stack application architecture.

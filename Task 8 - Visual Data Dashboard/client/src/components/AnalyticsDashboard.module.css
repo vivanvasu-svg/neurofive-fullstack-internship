@@ -1,0 +1,326 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.controlsRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(200, 155, 109, 0.2);
+    padding-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.sectionHeader {
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: 1.4rem;
+    color: var(--color-primary-dark, #543a29);
+    margin: 0;
+}
+
+.filterGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.filterLabel {
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted, #6b6259);
+}
+
+.filterDropdown {
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border: 1.5px solid rgba(111, 78, 55, 0.2);
+    border-radius: var(--radius-sm, 10px);
+    background-color: var(--color-background, #faf7f2);
+    color: var(--color-text, #2b2b2b);
+    cursor: pointer;
+    outline: none;
+    transition: border-color var(--transition);
+}
+
+.filterDropdown:focus {
+    border-color: var(--color-secondary, #c89b6d);
+}
+
+.metricsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.statCard {
+    background-color: var(--color-surface, #ffffff);
+    border-radius: var(--radius-sm, 10px);
+    border: 1px solid rgba(200, 155, 109, 0.15);
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(4b, 34, 23, 0.04);
+}
+
+.statIcon {
+    font-size: 2rem;
+    background-color: rgba(200, 155, 109, 0.12);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.statInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.statLabel {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--color-text-muted, #6b6259);
+    letter-spacing: 0.5px;
+}
+
+.statValue {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary-dark, #543a29);
+    margin: 0.15rem 0 0 0;
+}
+
+.chartsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Make Donut chart stretch 2 columns if screen supports, otherwise stack */
+.chartsGrid>div:nth-child(1),
+.chartsGrid>div:nth-child(2) {
+    grid-column: span 1;
+}
+
+.chartsGrid>div:nth-child(3) {
+    grid-column: span 2;
+}
+
+.chartCard {
+    background-color: var(--color-surface, #ffffff);
+    border-radius: var(--radius, 16px);
+    border: 1px solid rgba(200, 155, 109, 0.15);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md, 0 10px 30px rgba(43, 27, 15, 0.05));
+    display: flex;
+    flex-direction: column;
+}
+
+.chartTitle {
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: 1.1rem;
+    color: var(--color-primary, #6f4e37);
+    margin: 0 0 1.25rem 0;
+    border-bottom: 1px dashed rgba(200, 155, 109, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.emptyChart {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted, #6b6259);
+    font-size: 0.85rem;
+    background-color: var(--color-background, #faf7f2);
+    border-radius: var(--radius-sm, 10px);
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Bar Chart styling */
+.barChartContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    justify-content: center;
+    height: 100%;
+}
+
+.barRow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.barLabel {
+    width: 120px;
+    font-size: 0.8rem;
+    color: var(--color-text, #2b2b2b);
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.barTrack {
+    flex: 1;
+    height: 12px;
+    background-color: var(--color-background, #faf7f2);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.barFill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary, #6f4e37) 0%, var(--color-secondary, #c89b6d) 100%);
+    border-radius: 6px;
+    transition: width 0.6s cubic-bezier(0.1, 0.7, 0.1, 1.0);
+}
+
+.barValue {
+    width: 60px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-primary-dark, #543a29);
+    text-align: right;
+}
+
+/* Line Chart styling */
+.svgContainer {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.lineChartSvg {
+    overflow: visible;
+}
+
+.dotGroup {
+    cursor: pointer;
+}
+
+.dotGroup circle {
+    transition: r 0.2s ease, fill 0.2s ease;
+}
+
+.dotGroup:hover circle {
+    r: 7;
+    fill: var(--color-secondary, #c89b6d);
+}
+
+.nodeVal {
+    fill: var(--color-primary-dark, #543a29);
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.dotGroup:hover .nodeVal {
+    opacity: 1;
+}
+
+.axisLabel {
+    fill: var(--color-text-muted, #6b6259);
+    font-weight: 500;
+}
+
+/* Donut Chart styling */
+.donutLayout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 0.5rem 0;
+    flex-wrap: wrap;
+}
+
+.donutSvgWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donutCenter {
+    font-family: var(--font-heading, 'Playfair Display', serif);
+    font-size: 16px;
+    font-weight: 700;
+    fill: var(--color-primary-dark, #543a29);
+}
+
+.donutLegend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dotCompleted {
+    background-color: var(--color-secondary, #c89b6d);
+}
+
+.dotPending {
+    background-color: rgba(111, 78, 55, 0.1);
+    border: 1px solid rgba(111, 78, 55, 0.15);
+}
+
+.legendText {
+    display: flex;
+    flex-direction: column;
+}
+
+.legendText span {
+    font-size: 0.75rem;
+    color: var(--color-text-muted, #6b6259);
+}
+
+.legendText strong {
+    font-size: 0.85rem;
+    color: var(--color-primary-dark, #543a29);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .chartsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .chartsGrid>div:nth-child(1),
+    .chartsGrid>div:nth-child(2),
+    .chartsGrid>div:nth-child(3) {
+        grid-column: span 1;
+    }
+
+    .donutLayout {
+        gap: 1.5rem;
+    }
+
+    .controlsRow {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,132 @@
+.footer {
+  background-color: var(--color-primary-dark);
+  color: #f0e8de;
+  padding-top: 64px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.brandCol {
+  max-width: 280px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.logo svg {
+  color: var(--color-accent);
+}
+
+.tagline {
+  color: #d9cabb;
+  font-size: 0.92rem;
+}
+
+.col h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+
+.col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.col a {
+  color: #d9cabb;
+  font-size: 0.92rem;
+  transition: color var(--transition);
+}
+
+.col a:hover {
+  color: var(--color-accent);
+}
+
+.hours li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #d9cabb;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.hours li span:first-child {
+  color: #f0e8de;
+  font-weight: 500;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.socialIcon:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.bottomBar {
+  text-align: center;
+  padding: 22px 0;
+  font-size: 0.85rem;
+  color: #c8b7a6;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .brandCol {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .hours li {
+    align-items: center;
+  }
+}

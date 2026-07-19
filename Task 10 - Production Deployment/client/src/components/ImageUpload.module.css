@@ -1,0 +1,171 @@
+.uploadContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.error {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius-sm, 10px);
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.dropZone {
+    position: relative;
+    border: 2px dashed rgba(111, 78, 55, 0.25);
+    border-radius: var(--radius-sm, 10px);
+    background-color: var(--color-background, #faf7f2);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color var(--transition), background-color var(--transition), box-shadow var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+}
+
+.dropZone:hover:not(.uploadingZone) {
+    border-color: var(--color-secondary, #c89b6d);
+    background-color: rgba(200, 155, 109, 0.05);
+}
+
+.dragActive {
+    border-color: var(--color-secondary, #c89b6d);
+    background-color: rgba(200, 155, 109, 0.1);
+    box-shadow: 0 0 0 4px rgba(200, 155, 109, 0.15);
+}
+
+.uploadingZone {
+    cursor: not-allowed;
+    border-color: rgba(111, 78, 55, 0.15);
+}
+
+.hiddenInput {
+    display: none;
+}
+
+.labelWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.75rem;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.08));
+}
+
+.instruction {
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.9rem;
+    color: var(--color-primary-dark, #543a29);
+    margin-bottom: 0.25rem;
+}
+
+.instruction span {
+    color: var(--color-secondary, #c89b6d);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.subtext {
+    font-size: 0.75rem;
+    color: var(--color-text-muted, #6b6259);
+}
+
+.progressWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.75rem;
+}
+
+.spinner {
+    width: 28px;
+    height: 28px;
+    border: 3px solid rgba(200, 155, 109, 0.2);
+    border-top: 3px solid var(--color-secondary, #c89b6d);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.progressText {
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-primary-dark, #543a29);
+}
+
+.progressBarBg {
+    width: 80%;
+    max-width: 250px;
+    height: 6px;
+    background-color: rgba(111, 78, 55, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progressBarFill {
+    height: 100%;
+    background-color: var(--color-secondary, #c89b6d);
+    transition: width 0.15s ease-out;
+}
+
+.previewContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid rgba(111, 78, 55, 0.15);
+    border-radius: var(--radius-sm, 10px);
+    overflow: hidden;
+    background-color: var(--color-background, #faf7f2);
+}
+
+.previewImage {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(111, 78, 55, 0.15);
+}
+
+.removeBtn {
+    background-color: #ef4444;
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem;
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+.removeBtn:hover {
+    background-color: #dc2626;
+}
+
+.removeBtn:disabled {
+    background-color: #fca5a5;
+    cursor: not-allowed;
+}

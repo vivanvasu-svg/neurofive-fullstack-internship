@@ -1,0 +1,14 @@
+{
+  "calls": [
+    [
+      {
+        "name": "Brewed Cold Brew",
+        "description": "Long steeped smooth iced coffee",
+        "price": 4.95,
+        "category": "Cold Coffee",
+        "image": "/uploads/cold-brew.png"
+      }
+    ]
+  ],
+  "mockCoffeesLength": 1
+}

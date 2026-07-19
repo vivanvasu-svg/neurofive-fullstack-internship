@@ -1,0 +1,324 @@
+.explorerWrapper {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.searchBar {
+    display: flex;
+    gap: 12px;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid #e2d7c5;
+    background-color: var(--color-surface);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.searchInput:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(198, 155, 109, 0.18);
+}
+
+.searchBtn {
+    padding: 14px 28px;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    transition: background-color var(--transition), transform 0.2s ease, box-shadow var(--transition);
+}
+
+.searchBtn:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(111, 78, 55, 0.2);
+}
+
+.filterWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filterLabel {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip {
+    padding: 8px 18px;
+    background-color: #f3ede4;
+    color: var(--color-primary-dark);
+    border-radius: var(--radius-pill);
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: var(--font-body);
+    transition: background-color var(--transition), color var(--transition), transform 0.2s ease;
+}
+
+.chip:hover {
+    background-color: var(--color-secondary);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.chipActive {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.resultsArea {
+    min-height: 280px;
+    position: relative;
+}
+
+/* Loading State */
+.loadingState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--color-text-muted);
+    animation: fadeIn 0.4s ease both;
+}
+
+.spinner {
+    width: 44px;
+    height: 44px;
+    border: 3.5px solid rgba(198, 155, 109, 0.2);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Error State */
+.errorState {
+    padding: 20px 0;
+    animation: fadeIn 0.4s ease both;
+}
+
+.errorBox {
+    background-color: #faf3f3;
+    border: 1px solid #ebd2d2;
+    border-left: 4px solid #d9534f;
+    padding: 24px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.errorMessage {
+    color: #a94442;
+    font-weight: 500;
+}
+
+.resetBtn {
+    padding: 8px 18px;
+    background-color: #a94442;
+    color: white;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: opacity var(--transition);
+}
+
+.resetBtn:hover {
+    opacity: 0.9;
+}
+
+/* Drinks Card Grid */
+.drinksGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    animation: fadeIn 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+.drinkCard {
+    background-color: var(--color-surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #f1ece2;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.drinkCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md), 0 10px 20px rgba(198, 155, 109, 0.1);
+}
+
+.imageWrapper {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.drinkImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition);
+}
+
+.drinkCard:hover .drinkImage {
+    transform: scale(1.05);
+}
+
+.tagClass {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    background-color: rgba(111, 78, 55, 0.85);
+    backdrop-filter: blur(4px);
+    color: white;
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.details {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.category {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-secondary);
+}
+
+.drinkName {
+    font-size: 1.4rem;
+    color: var(--color-primary-dark);
+    margin-top: -8px;
+}
+
+.subSubtitle {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-primary-dark);
+    border-left: 3px solid var(--color-secondary);
+    padding-left: 8px;
+    margin-bottom: 8px;
+}
+
+.ingredientsBox {
+    background-color: #fafbfc;
+    border-radius: var(--radius-sm);
+}
+
+.ingredientsList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.ingredientItem {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ingMeasure {
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+.ingName {
+    color: var(--color-text);
+}
+
+.instructionsBox {
+    background-color: #fcfbf9;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    border: 1px dashed #ede5db;
+}
+
+.instructionsText {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+    .drinksGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .searchBar {
+        flex-direction: column;
+    }
+
+    .imageWrapper {
+        height: 180px;
+    }
+}

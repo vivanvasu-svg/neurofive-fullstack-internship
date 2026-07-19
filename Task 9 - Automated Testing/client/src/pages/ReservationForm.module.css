@@ -1,0 +1,422 @@
+/* ── Page Shell ── */
+.page {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1a0d05 0%, #2b1c0f 40%, #3a2112 70%, #1a0d05 100%);
+    color: #f0e0cf;
+    font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+/* ── Header ── */
+.header {
+    padding: 2rem 1.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #c8a97a;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+    margin-bottom: 2.5rem;
+}
+
+.backLink:hover {
+    opacity: 1;
+    color: #e0c090;
+}
+
+.headerContent {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.tagline {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #c8873a;
+    background: rgba(200, 135, 58, 0.12);
+    border: 1px solid rgba(200, 135, 58, 0.3);
+    border-radius: 100px;
+    padding: 0.3rem 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    color: #c8a97a;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ── Main / Form Card ── */
+.main {
+    padding: 0 1.5rem 5rem;
+}
+
+.formCard {
+    max-width: 760px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(200, 135, 58, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem 2.5rem 2rem;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.3),
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 640px) {
+    .formCard {
+        padding: 1.5rem 1.25rem;
+        border-radius: 16px;
+    }
+}
+
+/* ── Success Banner ── */
+.successBanner {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 14px;
+    padding: 1.5rem;
+    color: #d1fae5;
+}
+
+.successIcon {
+    font-size: 1.5rem;
+    background: rgba(34, 197, 94, 0.2);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #4ade80;
+    font-weight: 700;
+}
+
+.successBanner strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #bbf7d0;
+}
+
+.successBanner p {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.85;
+}
+
+.bookAnotherBtn {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4ade80;
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.35);
+    border-radius: 8px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.bookAnotherBtn:hover {
+    background: rgba(34, 197, 94, 0.25);
+}
+
+/* ── Form Grid ── */
+.form {
+    width: 100%;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.fieldFull {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 560px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .fieldFull {
+        grid-column: 1;
+    }
+}
+
+/* ── Labels ── */
+.label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #d4b896;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.required {
+    color: #f87171;
+}
+
+.charCount {
+    margin-left: auto;
+    font-size: 0.73rem;
+    font-weight: 400;
+    color: #a07850;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.optional {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #8a6848;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* ── Inputs ── */
+.input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(200, 135, 58, 0.2);
+    border-radius: 10px;
+    color: #f0e0cf;
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.input::placeholder {
+    color: #7a5c3c;
+}
+
+.input:focus {
+    border-color: #c8873a;
+    background: rgba(200, 135, 58, 0.07);
+    box-shadow: 0 0 0 3px rgba(200, 135, 58, 0.15);
+}
+
+.input:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.inputError {
+    border-color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.06) !important;
+}
+
+.inputError:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+}
+
+/* Dropdown / select specific */
+.select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c8873a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    padding-right: 2.4rem;
+    cursor: pointer;
+}
+
+.select option {
+    background: #2b1c0f;
+    color: #f0e0cf;
+}
+
+/* Textarea specific */
+.textarea {
+    resize: vertical;
+    min-height: 90px;
+    line-height: 1.55;
+}
+
+/* ── File Upload ── */
+.fileLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1.5px dashed rgba(200, 135, 58, 0.3);
+    border-radius: 12px;
+    padding: 1.75rem 1rem;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color 0.2s, background 0.2s;
+    color: #a07850;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.fileLabel:hover {
+    border-color: #c8873a;
+    background: rgba(200, 135, 58, 0.05);
+}
+
+.fileIcon {
+    font-size: 1.8rem;
+}
+
+.fileInput {
+    display: none;
+}
+
+.previewWrapper {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+}
+
+.preview {
+    max-height: 180px;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(200, 135, 58, 0.25);
+    object-fit: cover;
+}
+
+.removePhoto {
+    font-size: 0.8rem;
+    color: #f87171;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 6px;
+    padding: 0.25rem 0.7rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.removePhoto:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+/* ── Error Messages ── */
+.errorMsg {
+    font-size: 0.78rem;
+    color: #f87171;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.1rem;
+}
+
+.errorMsg::before {
+    content: '⚠';
+    font-size: 0.7rem;
+}
+
+/* ── Actions ── */
+.actions {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.submitBtn {
+    width: 100%;
+    max-width: 360px;
+    padding: 0.85rem 2rem;
+    background: linear-gradient(135deg, #c8873a 0%, #e09b40 50%, #c8873a 100%);
+    background-size: 200% auto;
+    color: #1a0d05;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-position 0.4s ease, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(200, 135, 58, 0.35);
+    letter-spacing: 0.02em;
+}
+
+.submitBtn:hover:not(:disabled) {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(200, 135, 58, 0.5);
+}
+
+.submitBtn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.submitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.loadingInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+/* Spinner */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2.5px solid rgba(26, 13, 5, 0.3);
+    border-top-color: #1a0d05;
+    border-radius: 50%;
+    animation: spin 0.75s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.formNote {
+    font-size: 0.78rem;
+    color: #7a5c3c;
+    text-align: center;
+}

@@ -1,0 +1,31 @@
+.contact {
+  background-color: var(--color-primary);
+  background-image: radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 60%);
+}
+
+.inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  color: #fff;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  margin-bottom: 16px;
+}
+
+.text {
+  color: #f0e0cf;
+  margin-bottom: 32px;
+  font-size: 1.05rem;
+}
+
+.cta {
+  background-color: var(--color-accent);
+  color: #2b1c0f;
+}
+
+.cta:hover {
+  background-color: #d3872f;
+}
